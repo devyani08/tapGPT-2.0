@@ -35,11 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var question = document.getElementById("question-input").value;
 
     // Send the question to your server
-    fetch("https://yourserver.com/api/getAnswer", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+  fetch("https://api.openai.com/v1/endpoint", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "API key" // Replace with your actual API key
+  },
       body: JSON.stringify({ question: question })
     })
       .then(response => response.json())
