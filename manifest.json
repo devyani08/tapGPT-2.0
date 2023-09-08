@@ -16,7 +16,7 @@
     "https://www.google.com/"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "popup.js"
   },
   "web_accessible_resources": [
     {
@@ -36,5 +36,6 @@
     "default_popup": "popup.html",
     "default_title": "TapGPT"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self'"
+  "content_security_policy": {    
+    "extension_pages":"script-src 'self'; object-src 'self'; connect-src https://api.openai.com"
 }
