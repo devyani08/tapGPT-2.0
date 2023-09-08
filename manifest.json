@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "TapGPT",
+  "version": "1.0",
+  "description": "A Chrome extension that provides answers to questions.",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.google.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["popup.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["popup.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TapGPT"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self'"
+}
